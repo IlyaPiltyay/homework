@@ -13,7 +13,7 @@ Visa Gold 5999414228426353
 
 
 def mask_account_card(input_str: str) -> str:
-    '''Функция маскирует номер счета/карты,оставляя название название'''
+    """Функция маскирует номер счета/карты,оставляя название название"""
     if "Счет" in input_str:
         return mask_account(input_str.split()[1])
     else:
@@ -31,10 +31,8 @@ if __name__ == "__main__":
     print(mask_account_card("Счет 64686473678894779589"))
     print(mask_account_card("Счет 35383033474447895560"))
 
-
 date_str = "2024-03-11T02:26:18.671407"
 date_obj = datetime.datetime.fromisoformat(date_str)
-'''Модуль преобразование строки в дату'''
+"""Модуль преобразование строки в дату"""
 formatted_date = date_obj.strftime("%d.%m.%Y")
 print(formatted_date)
-
