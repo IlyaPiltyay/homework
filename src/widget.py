@@ -37,3 +37,4 @@ date_obj = datetime.datetime.fromisoformat(date_str)
 '''Модуль преобразование строки в дату'''
 formatted_date = date_obj.strftime("%d.%m.%Y")
 print(formatted_date)
+

@@ -5,6 +5,7 @@ list_of_id =[{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.
 
 
 def filter_by_state(information: list, state='EXECUTED') -> list:
+    '''Функция сортитрует значение ключа'''
     filtered_exe = []
     filtered_can = []
     for i in information:
@@ -17,6 +18,7 @@ def filter_by_state(information: list, state='EXECUTED') -> list:
 
 
 def sort_by_date(sorted_date):
+    '''функция сортирует дату'''
     sorted_time = sorted(sorted_date, key=lambda x: x.get('date'), reverse=True)
     return sorted_time
 
