@@ -15,6 +15,7 @@ def filter_by_state(information: list, state='EXECUTED') -> list:
     return filtered_exe
 
 
+
 def sort_by_date(sorted_date):
     sorted_time = sorted(sorted_date, key=lambda x: x.get('date'), reverse=True)
     return sorted_time
