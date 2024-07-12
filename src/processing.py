@@ -5,7 +5,7 @@ list_of_id =[{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.
 
 
 def filter_by_state(information: list, state='EXECUTED') -> list:
-    '''Функция сортитрует значение ключа'''
+    '''Функция сортитрует значение ключа '''
     filtered_exe = []
     filtered_can = []
     for i in information:
