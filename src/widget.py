@@ -35,4 +35,5 @@ date_str = "2024-03-11T02:26:18.671407"
 date_obj = datetime.datetime.fromisoformat(date_str)
 """Модуль преобразование строки в дату"""
 formatted_date = date_obj.strftime("%d.%m.%Y")
+
 print(formatted_date)
