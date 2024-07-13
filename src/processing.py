@@ -15,7 +15,7 @@ def filter_by_state(information: list, state="EXECUTED") -> list:
             filtered_exe.append(information_list)
         else:
             filtered_can.append(information_list)
-    return f"{filtered_exe} \n {filtered_can}"
+    return f"{filtered_exe}\n{filtered_can}"
 
 
 def sort_by_date(sorted_date):
