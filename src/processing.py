@@ -1,3 +1,5 @@
+from typing import Any
+
 list_of_id = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -6,7 +8,7 @@ list_of_id = [
 ]
 
 
-def filter_by_state(information: list, state="EXECUTED") -> list:
+def filter_by_state(information: list, state="EXECUTED") -> list[list[Any]]:
     """Функция фильтрует словари"""
     filtered_exe = []
     filtered_can = []
@@ -15,7 +17,7 @@ def filter_by_state(information: list, state="EXECUTED") -> list:
             filtered_exe.append(information_list)
         else:
             filtered_can.append(information_list)
-    return f"{filtered_exe}\n{filtered_can}"
+    return [filtered_exe, filtered_can]
 
 
 def sort_by_date(sorted_date):
