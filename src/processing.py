@@ -8,21 +8,20 @@ list_of_id = [
 ]
 
 
-def filter_by_state(information: list, state="EXECUTED") -> list[list[Any]]:
-    """Функция фильтрует словари"""
+def filter_by_state(information: list, state="EXECUTED") -> list:
+    """Функция сортитрует значение ключа"""
     filtered_exe = []
-    filtered_can = []
-    for information_list in information:
-        if information_list.get("state") == state:
-            filtered_exe.append(information_list)
-        else:
-            filtered_can.append(information_list)
-    return [filtered_exe, filtered_can]
+    for i in information:
+        if i.get("state") == state:
+            filtered_exe.append(i)
+    return [filtered_exe]
 
 
-def sort_by_date(sorted_date):
+def sort_by_date(
+    sorted_date: list[dict[str, Any]], reverse=True
+) -> list[dict[str, Any]]:
     """функция сортирует дату"""
-    sorted_time = sorted(sorted_date, key=lambda x: x.get("date"), reverse=True)
+    sorted_time = sorted(sorted_date, key=lambda x: x.get("date", ""), reverse=reverse)
     return sorted_time
 
 
