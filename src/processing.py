@@ -14,7 +14,7 @@ def filter_by_state(information: list, state="EXECUTED") -> list:
     for i in information:
         if i.get("state") == state:
             filtered_exe.append(i)
-    return [filtered_exe]
+    return filtered_exe
 
 
 def sort_by_date(
