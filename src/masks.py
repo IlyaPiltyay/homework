@@ -1,5 +1,6 @@
 def mask_card(card_number: str) -> str:
     """Функция которая маскерует номер карты"""
+    empty_card = []
     if card_number.isdigit() and len(card_number) == 16:
         full_card_number = f"{card_number[:5]} {card_number[5:7]}{'*' * 2} {'*' * 4} {card_number[12:]}"
         return full_card_number
