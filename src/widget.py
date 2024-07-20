@@ -32,8 +32,14 @@ if __name__ == "__main__":
     print(mask_account_card("Счет 35383033474447895560"))
 
 date_str = "2024-03-11T02:26:18.671407"
-date_obj = datetime.datetime.fromisoformat(date_str)
-"""Модуль преобразование строки в дату"""
-formatted_date = date_obj.strftime("%d.%m.%Y")
 
-print(formatted_date)
+
+def format_data(date_str):
+    """Функция преобразование строки в дату"""
+    date_obj = datetime.datetime.fromisoformat(date_str)
+    formatted_date = date_obj.strftime("%d.%m.%Y")
+    return formatted_date
+
+
+
+print(format_data(date_str))
