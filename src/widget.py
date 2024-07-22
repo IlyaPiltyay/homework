@@ -41,5 +41,4 @@ def format_data(date_str):
     return formatted_date
 
 
-
 print(format_data(date_str))
