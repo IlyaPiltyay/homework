@@ -5,6 +5,7 @@ from typing import Any, Callable
 def log(filename: Any) -> Callable:
     """Логирует вызов функции и ее результат в файл или в консоль
     filename: Путь к файлу для записи логов. Если не указан, логи выводятся в консоль.
+    :rtype: object
     """
 
     def decorator(func: Callable) -> Callable:
@@ -12,25 +13,21 @@ def log(filename: Any) -> Callable:
         def wrapper(*args, **kwargs):
             try:
                 result = func(*args, **kwargs)
-                if func:
+                if filename:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"my_function ok. Result: {result}")
+                        file.write(f"{func.__name__} ok")
                 else:
-                    print(f"my_function ok. Result: {result}")
+                    print(f"{func.__name__} ok.")
 
             except Exception as ex:
-                if func:
+                if filename:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(
-                            f"{func.__name__} error - {ex}.Input {args},{kwargs}"
-                        )
+                        file.write(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
                 else:
-                    print(f"{func.__name__} error - {ex}.Input {args},{kwargs}")
-
+                    print(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
+            return result
         return wrapper
-
     return decorator
-
 
 @log(filename="mylog.txt")
 def my_function(x: int, y: int) -> int:
