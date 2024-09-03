@@ -21,7 +21,7 @@ def test_log_tree(capsys):
     captured = capsys.readouterr()
     assert captured.out == "my_function ok.\n"
 
-def test_log_two1111111111111(capsys):
+def test_log_two(capsys):
     @log(filename="")
     def my_function(x, y):
         return x / y
