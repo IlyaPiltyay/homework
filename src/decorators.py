@@ -25,7 +25,7 @@ def log(filename: Any) -> Callable:
                         file.write(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
                 else:
                     print(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
-
+                raise ex
             return result
         return wrapper
     return decorator
