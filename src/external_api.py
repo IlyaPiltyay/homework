@@ -29,7 +29,8 @@ def operation_code(transactions):
     print(f"Сумма транзакций в EUR: {round(eur_sum):}")
     total_converted = usd_sum + eur_sum
 
-    url = f"https://api.apilayer.com/currency_data/convert?to=RUB&from=USD&amount={total_converted}"
+
+    url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from=USD&amount={total_converted}"
     headers = {"apikey": API_KEY}
     response = requests.get(url, headers=headers)
     result = response.json()
