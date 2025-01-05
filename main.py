@@ -4,7 +4,8 @@ transactions = [{"id": 939719570,
                  "state": "EXECUTED",
                  "date": "2018-06-30T02:08:58.425572",
                  "operationAmount":
-                     {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"},
+                     {"amount": "9824.07",
+                      "currency": {"name": "USD", "code": "USD"},
                       },
                  "description": "Перевод организации",
                  "from": "Счет 75106830613657916952",
@@ -63,9 +64,11 @@ transactions = [{"id": 939719570,
 for trans in filter_by_currency(transactions, "USD"):
     print(trans)
 
-descriptions = transaction_descriptions(transactions)
-for key in range(5):
-    print(next(descriptions))
+
+for key in transaction_descriptions(transactions):
+    print(key)
 
 for card_number in card_number_generator(1, 5):
     print(card_number)
+
+

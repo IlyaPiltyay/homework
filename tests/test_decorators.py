@@ -28,3 +28,13 @@ def test_log_two(capsys):
 
     with pytest.raises(ZeroDivisionError):
         my_function(1, 0)
+
+def test_path_file():
+    @log(filename="file.txt")
+    def my_function(x, y):
+        return x + y
+
+    my_function(1, 2)
+    with open('file.txt','r') as file:
+        out = file.read()
+        assert out == "my_function ok"

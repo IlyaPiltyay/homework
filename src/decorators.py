@@ -14,7 +14,7 @@ def log(filename: Any) -> Callable:
             try:
                 result = func(*args, **kwargs)
                 if filename:
-                    with open(filename, "a", encoding="utf-8") as file:
+                    with open(filename, "w", encoding="utf-8") as file:
                         file.write(f"{func.__name__} ok")
                 else:
                     print(f"{func.__name__} ok.")
@@ -22,17 +22,22 @@ def log(filename: Any) -> Callable:
             except Exception as ex:
                 if filename:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
+                        file.write(
+                            f"{func.__name__} error - {ex}.Inputs {args},{kwargs}"
+                        )
                 else:
                     print(f"{func.__name__} error - {ex}.Inputs {args},{kwargs}")
                 raise ex
             return result
+
         return wrapper
+
     return decorator
+
 
 @log(filename="mylog.txt")
 def my_function(x: int, y: int) -> int:
-    return x + y
+    return int(x / y)
 
 
 my_function(1, 2)

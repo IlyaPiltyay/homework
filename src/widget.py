@@ -3,7 +3,7 @@ import datetime
 from src.masks import mask_account, mask_card
 
 example_data = """ Maestro 1596837868705199
-Счет 64686473678894779589#
+Счет 64686473678894779589
 MasterCard 7158300734726758
 Счет 35383033474447895560
 Visa Classic 6831982476737658
@@ -15,11 +15,10 @@ Visa Gold 5999414228426353
 def mask_account_card(input_str: str) -> str:
     """Функция маскирует номер счета/карты,оставляя название название"""
     if "Счет" in input_str:
-        return mask_account(input_str.split()[1])
+        return mask_account(input_str.split()[-1])
     else:
         new_card = mask_card(input_str.split()[-1])
         return input_str.replace(input_str.split()[-1], new_card)
-
 
 if __name__ == "__main__":
     print(mask_account_card("Maestro 1596837868705199"))

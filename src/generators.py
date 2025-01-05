@@ -7,9 +7,6 @@ def filter_by_currency(transactions: list, currency: str) -> Iterator[str]:
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
-    # except StopIteration:
-    # if transaction not in transactions:
-    # return 'валюты нет.'
 
 
 def transaction_descriptions(transactions: Dict) -> Iterator[str]:
@@ -19,7 +16,7 @@ def transaction_descriptions(transactions: Dict) -> Iterator[str]:
             yield transaction["description"]
     except StopIteration:
         if transaction == []:
-            return 'нет транзакций.'
+            return transaction
 
 
 def card_number_generator(start: int, stop: int) -> Iterator[str]:
@@ -31,5 +28,3 @@ def card_number_generator(start: int, stop: int) -> Iterator[str]:
             f"{number_str[:4]} {number_str[4:8]} {number_str[8:12]} {number_str[12:]}"
         )
         yield formatted_number
-
-
