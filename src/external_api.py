@@ -9,7 +9,7 @@ API_KEY = os.getenv('API_KEY')
 
 
 def operation_code(transactions):
-    """Функция принимает на вход транзакции и возвращает сумму транзакций в RUB."""
+    """Функция принимает на вход транзакции и возвращает сумму транзакций в RUB.""
     rub_sum = 0
     usd_sum = 0
     eur_sum = 0
