@@ -68,7 +68,5 @@ for trans in filter_by_currency(transactions, "USD"):
 for key in transaction_descriptions(transactions):
     print(key)
 
-for card_number in card_number_generator(1, 5):
+for card_number in card_number_generator(1, 6):
     print(card_number)
-
-
