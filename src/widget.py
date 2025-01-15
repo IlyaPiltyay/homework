@@ -20,6 +20,7 @@ def mask_account_card(input_str: str) -> str:
         new_card = mask_card(input_str.split()[-1])
         return input_str.replace(input_str.split()[-1], new_card)
 
+
 if __name__ == "__main__":
     print(mask_account_card("Maestro 1596837868705199"))
     print(mask_account_card("MasterCard 7158300734726758"))
