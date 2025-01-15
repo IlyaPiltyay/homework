@@ -1,5 +1,6 @@
 import os
 from unittest.mock import patch
+
 from src.external_api import (
     operation_code,
 )  # Измените на актуальный путь к вашему модулю

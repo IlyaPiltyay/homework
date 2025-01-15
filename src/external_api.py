@@ -1,8 +1,9 @@
-import requests
 import os
-from src.Utils import read_file
+
+import requests
 from dotenv import load_dotenv
 
+from src.Utils import read_file
 
 load_dotenv(".env")
 API_KEY = os.getenv("API_KEY")

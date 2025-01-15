@@ -20,7 +20,7 @@ def mask_card(card_number: str) -> str:
         return full_card_number
     else:
         logger.warning("Некорректный номер карты")
-        return None
+        return "Некорректный номер карты"
 
 
 def mask_account(account_number: str) -> str:
@@ -31,4 +31,4 @@ def mask_account(account_number: str) -> str:
         return full_account_number
     else:
         logger.warning("Некорректный номер счета")
-        return None
+        return "Некорректный номер счета"

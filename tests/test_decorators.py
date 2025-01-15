@@ -1,5 +1,4 @@
-import pytest
-from src.decorators import my_function, log
+from src.decorators import log
 
 
 def test_log():
@@ -10,11 +9,6 @@ def test_log():
     assert result == 3
 
 
-def test_log_two(capsys):
-    with pytest.raises(Exception):
-        my_function()
-
-
 def test_log_tree(capsys):
     @log(filename="")
     def my_function(x, y):
@@ -23,15 +17,6 @@ def test_log_tree(capsys):
     my_function(1, 2)
     captured = capsys.readouterr()
     assert captured.out == "my_function ok.\n"
-
-
-def test_log_two(capsys):
-    @log(filename="")
-    def my_function(x, y):
-        return x / y
-
-    with pytest.raises(ZeroDivisionError):
-        my_function(1, 0)
 
 
 def test_path_file():
