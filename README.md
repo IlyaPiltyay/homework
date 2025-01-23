@@ -27,4 +27,4 @@ poetry run pytest --cov  — через poetry.
 
 Этот проект лицензирован по [лицензии MIT](LICENSE).
 ####
-#####
+####
