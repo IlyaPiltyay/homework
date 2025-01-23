@@ -21,7 +21,7 @@ def read_file(path: str):
         with open(path, encoding="utf8") as file:
             operation = json.load(file)
         if not isinstance(operation, list):
-            logger.info(f"Объект не найден")
+            logger.info("Объект не найден")
             return []
         return operation
     except FileNotFoundError as f:
