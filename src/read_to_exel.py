@@ -18,7 +18,7 @@ def read_financial_operations(file_path: str) -> list:
     """Функция принимает на вход путь к Exel файлу
     и возвращает данные с транзакциями."""
     try:
-        logger.info("Чтение данных из Excel-файла ")
+        logger.info("Чтение данных из Excel-файла  ")
         data = pd.read_excel(file_path, engine="openpyxl")
         print(data.head())
         logger.info(f"Объем файла{data.shape}")
