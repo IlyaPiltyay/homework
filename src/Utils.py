@@ -25,7 +25,7 @@ def read_file(path: str):
             return []
         return operation
     except FileNotFoundError as f:
-        logger.error(f"Файл не найден: {f}")
+        logger.error(f"Файл не найден:  {f}")
         print(f"Error: {f}")
         return []
     except json.JSONDecodeError as f:
